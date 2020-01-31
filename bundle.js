@@ -1,6 +1,6 @@
 'use strict';
 
-// src/foo.js
+// src/node_modules/foo.js
 var foo = 'hello world!';
 
 // src/main.js
