@@ -1,3 +1,6 @@
 # Repository for class project
 
-This readme is a placeholder that should be replaced
+ - Download the Project file 
+ - open file path in command promt
+ - run 'npm run build' 
+ - run 'npm start'
