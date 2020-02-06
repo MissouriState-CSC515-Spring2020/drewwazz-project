@@ -4,8 +4,8 @@
 	<meta charset='utf-8'>
 	<meta name='viewport' content='width=device-width'>
 	<title>Gibson Page</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<link rel='stylesheet' href ='css/main.css'>
-	<script src="jquery-3.4.1.min.js"></script>
 
 </head>
 <body>
@@ -33,15 +33,34 @@
 		<h1>Gibson Page</h1>
 		<p>The time is <span id='time-now'>...</span></p>
 	</div>
-	<div id='gibsonImgs'>
-		<img class='GibsonImg' src='images/Gibson1.jpg' alt='Gibson Picture'>
+
+	<div id ="MagicCarousel" class ="carousel slide" data-ride="carousel">
+		<div class="carousel-inner" role="listbox">
+			<div class="carousel-item active">
+					<img src="images/Gibson1.jpg" class = "d-block w-100" alt="Fourth slide">
+			</div>
+			<div class = "carousel-item">
+					<img src="images/Gibson2.jpg" class = "d-block w-100" alt="Fifth slide">
+			</div>
+			<div class = "carousel-item">
+					<img src="images/Gibson3.jpg" class = "d-block w-100" alt="Sixth slide">
+			</div>
+		</div>
 	</div>
-	<div>
-		<img class='GibsonImg' src='images/Gibson2.jpg' alt='Gibson Picture'>
-	</div>
-	<div>
-		<img class='GibsonImg' src='images/Gibson3.jpg' alt='Gibson Picture'>
-	</div>
+
+
+	<!-- Script section -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+	<script>
+		$(document).ready(function(){
+			$("#MagicCarousel").carousel({
+				interval: 2000
+			});
+		});
+	</script>
 
 	<script src='bundle.js'></script>
 </body>
