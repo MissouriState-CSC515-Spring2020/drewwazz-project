@@ -9,18 +9,9 @@ body {
 	background-image: url("../images/background1.jpg");
 	background-size: cover; }
 img{
-  margin: 50px auto; 
   position: relative; 
-  width: 240px; 
-  height: 240px; 
-}
-
-.FenderImg{
- 
-}
-
-.GibsonImg{
-
+  height: 50%;
+  width: 50%;
 }
 
 #slideshow { 
