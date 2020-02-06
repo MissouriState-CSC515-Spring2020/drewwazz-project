@@ -4,11 +4,13 @@
 	<meta charset='utf-8'>
 	<meta name='viewport' content='width=device-width'>
 	<title>Guitar Emporium</title>
-	<link rel="stylesheet" href ="css/main.css">
-	<script src=”https://www.noupe.comdist/html5shiv.js”></script>
+	<link rel='stylesheet' href ='css/main.css'>
+	<script src='https://www.noupe.comdist/html5shiv.js'></script>
+	<script src="jquery-3.4.1.min.js"></script>
 
 </head>
 <body>
+	<!--Nav menu -->
 	<nav>
 	  <ul>
 	    <li>
@@ -28,11 +30,44 @@
 	    </li>
 	  </ul>
 	</nav>
+	<!--Start of page -->
 	<div>
 		<h1>Drew's Guitar Shop</h1>
 		<p>The time is <span id='time-now'>...</span></p>
-		<script src='bundle.js'></script>
 	</div>
 
+	<div id='slideshow'>
+		<div>
+			<img class='FenderImg' src='images/Fender1.jpg' alt='Fender Picture'>
+		</div>
+		<div>
+			<img class='FenderImg' src='images/Fender2.jpg' alt='Fender Picture'>
+		</div>
+		<div>
+			<img class='FenderImg' src='images/JimmyPageFender.jpg' alt='Fender Picture'>
+		</div>
+		<div>
+			<img class='GibsonImg' src='images/Gibson1.jpg' alt='Gibson Picture'>
+		</div>
+		<div>
+			<img class='GibsonImg' src='images/Gibson2.jpg' alt='Gibson Picture'>
+		</div>
+		<div>
+			<img class='GibsonImg' src='images/Gibson3.jpg' alt='Gibson Picture'>
+		</div>
+	</div>
+
+	<script src='bundle.js'></script>
+	<script>
+		$("#slideshow > div:gt(0)").hide();
+		setInterval(function() { 
+		  $('#slideshow > div:first')
+		    .fadeOut(1000)
+		    .next()
+		    .fadeIn(1000)
+		    .end()
+		    .appendTo('#slideshow');
+		},  3000);
+	</script>
 </body>
 </html>
