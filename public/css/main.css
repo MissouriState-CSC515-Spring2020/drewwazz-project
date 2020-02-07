@@ -3,11 +3,12 @@ body {
   	max-width: 960px;
   	margin: 0 auto;
 	font-family: 'Helvetica Neue', Arial, sans-serif;
-	color: #333;
 	font-weight: 300;
+  color:white;
 	text-align: center;
-	background-image: url("../images/background1.jpg");
-	background-size: cover; }
+	background-image: url("../images/background3.jpg");
+	background-size: cover; 
+}
 
 .carousel{
 
@@ -15,7 +16,6 @@ body {
   max-height:400px;
   margin: auto;
 }
-
 
 nav {
   width: 100%;
