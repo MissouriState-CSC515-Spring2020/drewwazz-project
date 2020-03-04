@@ -1,4 +1,5 @@
 #Compiles Source#
+**node_modules/
 #################
 *.com
 *.class
