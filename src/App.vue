@@ -1,15 +1,29 @@
+// App.vue
+
 <template>
-  <div id="todo-item" v-bind:class="{'is-complete':todo.completed}">
-    <p>{{todo.title}}</p>
+  <div id="app">
+    <nav>
+        <ul>
+            <li>
+                <router-link :to="{name: 'home'}">Home</router-link>
+            </li>
+            <li>
+                <router-link :to="{name: 'register'}">Register</router-link>
+            </li>
+            <li>
+                <router-link :to="{name: 'login'}">Login</router-link>
+            </li>
+            <li>
+                <router-link :to="{name: 'Fender', params: {id: 2}}">Fender</router-link>
+            </li>
+        </ul>
+    </nav>
+    <router-view />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: "ToDoItem",
-  props: ["todo"]
 }
 </script>
 
