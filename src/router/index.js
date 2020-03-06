@@ -9,47 +9,48 @@ import Contact from '../components/Contact.vue';
 Vue.use(VueRouter);
 
 const routes = [
-	{
-		path: '/',
-		name: 'Home',
-		component: Home,
-		meta: {
-			title: 'Home'
-		}
-	},
-	{
-		path: '/fender',
-		name: 'fender',
-		component: Fender,
-		meta: {
-			title: 'Fender'
-		}
-	},
-	{
-		path: '/gibson',
-		name: 'gibson',
-		component: Gibson,
-		meta: {
-			title: 'Gibson'
-		}
-	},
-	{
-		path: '/Contact',
-		name: 'Contact',
-		component: Contact,
-		meta: {
-			title: 'Contact'
-		}
-	},
-	{
-		path: '/About',
-		name: 'About',
-		component: About,
-		meta: {
-			title: 'About'
-		}
-	},
+{
+	path: '/',
+	name: 'Home',
+	component: Home,
+	meta: {
+		title: 'Home'
+	}
+},
+{
+	path: '/fender',
+	name: 'fender',
+	component: Fender,
+	meta: {
+		title: 'Fender'
+	}
+},
+{
+	path: '/gibson',
+	name: 'gibson',
+	component: Gibson,
+	meta: {
+		title: 'Gibson'
+	}
+},
+{
+	path: '/Contact',
+	name: 'Contact',
+	component: Contact,
+	meta: {
+		title: 'Contact'
+	}
+},
+{
+	path: '/About',
+	name: 'About',
+	component: About,
+	meta: {
+		title: 'About'
+	}
+},
 ];
+
 
 const router = new VueRouter({
 	mode: 'history',
