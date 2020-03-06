@@ -3,31 +3,47 @@
 <template>
   <div id="app">
     <nav>
-        <ul>
-            <li>
-                <router-link :to="{name: 'home'}">Home</router-link>
-            </li>
-            <li>
-                <router-link :to="{name: 'fender'}">Fender</router-link>
-            </li>
-            <li>
-                <router-link :to="{name: 'gibson'}">Gibson</router-link>
-            </li>
-            <li>
-                <router-link :to="{name: 'about', params: {id: 2}}">About</router-link>
-            </li>
-            <li>
-                <router-link :to="{name: 'contact'}">Contact</router-link>
-            </li>
-        </ul>
+      <ul>
+        <li>
+          <router-link :to="{name: 'home'}">Home</router-link>
+        </li>
+        <li>
+          <router-link :to="{name: 'fender'}">Fender</router-link>
+        </li>
+        <li>
+          <router-link :to="{name: 'gibson'}">Gibson</router-link>
+        </li>
+        <li>
+          <router-link :to="{name: 'about', params: {id: 2}}">About</router-link>
+        </li>
+        <li>
+          <router-link :to="{name: 'contact'}">Contact</router-link>
+        </li>
+      </ul>
     </nav>
     <router-view />
   </div>
 </template>
 
 <script>
-export default {
-}
+  export default {
+    /*
+    created() {
+      if (this.$workbox) {
+        this.$workbox.addEventListener("waiting", () => {
+          this.showUpgradeUI = true;
+        });
+      }
+    },
+
+    methods: {
+      async accept() {
+        this.showUpgradeUI = false
+        await this.$workbox.messageSW({ type: "SKIP_WAITING" });
+      }
+    },
+    */
+  }
 </script>
 
 <style>
@@ -40,14 +56,14 @@ export default {
   margin-top: 60px;
 }
 body {
-    width: 100%;
-    max-width: 960px;
-    margin: 0 auto;
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    font-weight: 300;
-    background-image: url('./components/images/background3.jpg');
-    background-size: cover;
-    text-align: center;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 300;
+  background-image: url('./components/images/background3.jpg');
+  background-size: cover;
+  text-align: center;
 
 }
 
@@ -65,61 +81,61 @@ nav {
 nav ul {
   list-style: none;
   overflow: hidden; }
-nav ul li {
-  float: left;
-  width: 20%; }
-nav ul li a {
-  text-align: center;
-  padding: 8px 0;
-  display: block;
-  width: 100%;
-  background: #cdeb8e; /* Old browsers */
-  background: -moz-linear-gradient(top,
-    #cdeb8e 0%, #b0ca34 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom,
-    color-stop(0%,#cdeb8e),
-    color-stop(100%,#b0ca34)); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top,
-    #cdeb8e 0%,#b0ca34 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top,
-    #cdeb8e 0%,#b0ca34 100%); /* Opera 11.10+ */
-  background: linear-gradient(to bottom,
-    #cdeb8e 0%,#b0ca34 100%); /* W3C, IE10+ */
-  filter: progid:DXImageTransform.Microsoft.gradient(
-    startColorstr=’#cdeb8e’,
-    endColorstr=’#b0ca34′,GradientType=0 ); /* IE6-9 */
-  }
-nav ul li a,
-nav ul li a:focus,
-nav ul li a:visited,
-nav ul li a:hover,
-nav ul li a:active {
-  color: #000;
-  text-decoration: none; }
-nav ul li a:hover,
-nav ul li a:active {
-  background: #b0ca34; /* Old browsers */
-  background: -moz-linear-gradient(top,
-    #b0ca34 0%, #96c40d 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom,
-    color-stop(0%,#b0ca34),
-    color-stop(100%,#96c40d)); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top,
-    #b0ca34 0%,#96c40d 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top,
-    #b0ca34 0%,#96c40d 100%); /* Opera 11.10+ */
-  background: linear-gradient(to bottom,
-    #b0ca34 0%,#96c40d 100%); /* W3C, IE10+ */
-  filter: progid:DXImageTransform.Microsoft.gradient(
-    startColorstr=’#b0ca34′,
-    endColorstr=’#96c40d’,GradientType=0 ); /* IE6-9 */
-  }
-nav ul li:first-child a {
-  border-top-left-radius: 8px;
-  border-bottom-left-radius: 8px; }
-nav ul li:last-child a {
-  border-top-right-radius: 8px;
-  border-bottom-right-radius: 8px; }
+  nav ul li {
+    float: left;
+    width: 20%; }
+    nav ul li a {
+      text-align: center;
+      padding: 8px 0;
+      display: block;
+      width: 100%;
+      background: #cdeb8e; /* Old browsers */
+      background: -moz-linear-gradient(top,
+        #cdeb8e 0%, #b0ca34 100%); /* FF3.6+ */
+      background: -webkit-gradient(linear, left top, left bottom,
+        color-stop(0%,#cdeb8e),
+        color-stop(100%,#b0ca34)); /* Chrome,Safari4+ */
+      background: -webkit-linear-gradient(top,
+        #cdeb8e 0%,#b0ca34 100%); /* Chrome10+,Safari5.1+ */
+      background: -o-linear-gradient(top,
+        #cdeb8e 0%,#b0ca34 100%); /* Opera 11.10+ */
+      background: linear-gradient(to bottom,
+        #cdeb8e 0%,#b0ca34 100%); /* W3C, IE10+ */
+      filter: progid:DXImageTransform.Microsoft.gradient(
+        startColorstr=’#cdeb8e’,
+        endColorstr=’#b0ca34′,GradientType=0 ); /* IE6-9 */
+    }
+    nav ul li a,
+    nav ul li a:focus,
+    nav ul li a:visited,
+    nav ul li a:hover,
+    nav ul li a:active {
+      color: #000;
+      text-decoration: none; }
+      nav ul li a:hover,
+      nav ul li a:active {
+        background: #b0ca34; /* Old browsers */
+        background: -moz-linear-gradient(top,
+          #b0ca34 0%, #96c40d 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom,
+          color-stop(0%,#b0ca34),
+          color-stop(100%,#96c40d)); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top,
+          #b0ca34 0%,#96c40d 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top,
+          #b0ca34 0%,#96c40d 100%); /* Opera 11.10+ */
+        background: linear-gradient(to bottom,
+          #b0ca34 0%,#96c40d 100%); /* W3C, IE10+ */
+        filter: progid:DXImageTransform.Microsoft.gradient(
+          startColorstr=’#b0ca34′,
+          endColorstr=’#96c40d’,GradientType=0 ); /* IE6-9 */
+      }
+      nav ul li:first-child a {
+        border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px; }
+        nav ul li:last-child a {
+          border-top-right-radius: 8px;
+          border-bottom-right-radius: 8px; }
 
-@import'~bootstrap/dist/css/bootstrap.css'
-</style>
+          @import'~bootstrap/dist/css/bootstrap.css'
+        </style>
