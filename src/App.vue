@@ -1,38 +1,49 @@
+// App.vue
+
 <template>
-  <div id="todo-item" v-bind:class="{'is-complete':todo.completed}">
-    <p>{{todo.title}}</p>
+  <div id="app">
+    <nav>
+        <ul>
+            <li>
+                <router-link :to="{name: 'home'}">Home</router-link>
+            </li>
+            <li>
+                <router-link :to="{name: 'register'}">Gibson</router-link>
+            </li>
+            <li>
+                <router-link :to="{name: 'login'}">Fender</router-link>
+            </li>
+            <li>
+                <router-link :to="{name: 'student', params: {id: 2}}">Student</router-link>
+            </li>
+        </ul>
+    </nav>
+    <router-view />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: "ToDoItem",
-  props: ["todo"]
 }
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
 }
-
 body {
-  width: 100%;
+    width: 100%;
     max-width: 960px;
     margin: 0 auto;
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 300;
-  color:white;
-  text-align: center;
-  background-image: url("../images/background3.jpg");
-  background-size: cover; 
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 300;
+    text-align: center;
+
 }
 
 .carousel{
@@ -103,4 +114,6 @@ nav ul li:first-child a {
 nav ul li:last-child a {
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px; }
+
+@import'~bootstrap/dist/css/bootstrap.css'
 </style>
