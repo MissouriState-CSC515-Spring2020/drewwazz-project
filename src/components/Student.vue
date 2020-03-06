@@ -1,6 +1,6 @@
 <template>
     <div>
-        Register
+        Student ID is: {{ $route.params.id }}
     </div>
 </template>
 <script>
