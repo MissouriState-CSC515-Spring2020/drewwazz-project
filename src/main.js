@@ -4,7 +4,6 @@ import VueRouter from 'vue-router';
 import './registerServiceWorker';
 import 'bootstrap';
 
-
 import routes from './routes';
 
 Vue.config.productionTip = false;
