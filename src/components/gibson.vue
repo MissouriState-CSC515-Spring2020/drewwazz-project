@@ -1,30 +1,42 @@
 <template>
-	<!--
 	<div>
-		<h1>Gibson Page</h1>
-		<p>The time is <span id='time-now'>...</span></p>
-	</div>
-	
-	<div id ="MagicCarousel" class ="carousel slide" data-ride="carousel">
-		<div class="carousel-inner" role="listbox">
-			<div class="carousel-item active">
-					<img src="./images/Gibson1.jpg" class = "d-block w-100" alt="Fourth slide">
-			</div>
-			<div class = "carousel-item">
-					<img src="./images/Gibson2.jpg" class = "d-block w-100" alt="Fifth slide">
-			</div>
-			<div class = "carousel-item">
-					<img src="./images/Gibson3.jpg" class = "d-block w-100" alt="Sixth slide">
+		<div>
+			<h1>Gibson Page</h1>
+		</div>
+		<div id ="MagicCarousel" class ="carousel slide" data-ride="carousel">
+			<div class="carousel-inner" role="listbox">
+		
+				<div class = "carousel-item active">
+					<img v-bind:src="g1" class = "d-block w-100" alt="First slide">
+					<div class ="carousel-caption">
+						<h3>Gibson</h3>
+					</div>
+				</div>
+				<div class = "carousel-item">
+					<img v-bind:src="g2" class = "d-block w-100" alt="Second slide">
+					<div class ="carousel-caption">
+						<h3>Gibson</h3>
+					</div>
+				</div>
+				<div class = "carousel-item">
+					<img v-bind:src="g3" class = "d-block w-100" alt="Third slide">
+					<div class ="carousel-caption">
+						<h3>Gibson</h3>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
--->
-    <div>
-        gibson
-    </div>
 </template>
 <script>
-export default {
-    
-}
+	export default {
+		data(){
+			return{
+				g1: require('./images/Gibson1.jpg'),
+				g2: require('./images/Gibson2.jpg'),
+				g3: require('./images/Gibson3.jpg')
+			}
+		}
+
+	}
 </script>

@@ -42,6 +42,8 @@ body {
     margin: 0 auto;
     font-family: 'Helvetica Neue', Arial, sans-serif;
     font-weight: 300;
+    background-image: url('./components/images/background3.jpg');
+    background-size: cover;
     text-align: center;
 
 }
@@ -55,7 +57,8 @@ body {
 
 nav {
   width: 100%;
-  margin: 20px 0; }
+  margin: 20px 0; 
+}
 nav ul {
   list-style: none;
   overflow: hidden; }
