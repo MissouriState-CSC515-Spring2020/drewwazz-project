@@ -1,6 +1,6 @@
 <template>
     <div>
-        About
+        Contact
     </div>
 </template>
 <script>
