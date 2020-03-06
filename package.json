@@ -3,10 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "rollup -c",
-    "watch": "rollup -c -w",
-    "dev": "npm-run-all --parallel start watch",
-    "start": "serve public"
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "bootstrap": "^4.4.1",
