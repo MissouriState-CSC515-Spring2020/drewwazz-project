@@ -1,6 +1,6 @@
 {
-  "name": "pwa",
-  "short_name": "pwa",
+  "name": "Drew's Application",
+  "short_name": "D's App'",
   "icons": [
     {
       "src": "/img/icons/android-chrome-192x192.png",
