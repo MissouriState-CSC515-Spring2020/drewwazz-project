@@ -6,12 +6,14 @@ import Gibson from './components/gibson.vue';
 import About from './components/About.vue';
 import Redirect from './components/Redirect.vue';
 import Error from './components/404.vue';
+import Contact from './components/Contact.vue';
 
 const routes = [
     { path: '/', component: Home, name: 'home' },
     { path: '/fender', component: Fender, name: 'fender' },
     { path: '/gibson', component: Gibson, name: 'gibson' },
     { path: '/about/:id', component: About, name: 'about' },
+    { path: '/contact', component: Contact, name: 'contact' },
     { path: '/redirect', component: Redirect, name: 'redirect' },
     { path: '/404', component: Error, name: '404' },
 ];

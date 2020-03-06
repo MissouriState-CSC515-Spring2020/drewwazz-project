@@ -56,7 +56,7 @@
 	//import jQuery from 'jquery';
 	//let $ = jQuery;
 	export default {
-
+		
 		data(){
 			return{
 				f1: require('./images/Fender1.jpg'),
