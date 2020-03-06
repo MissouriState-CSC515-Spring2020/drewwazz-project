@@ -8,13 +8,13 @@
                 <router-link :to="{name: 'home'}">Home</router-link>
             </li>
             <li>
-                <router-link :to="{name: 'register'}">Gibson</router-link>
+                <router-link :to="{name: 'fender'}">Fender</router-link>
             </li>
             <li>
-                <router-link :to="{name: 'login'}">Fender</router-link>
+                <router-link :to="{name: 'gibson'}">Gibson</router-link>
             </li>
             <li>
-                <router-link :to="{name: 'student', params: {id: 2}}">Student</router-link>
+                <router-link :to="{name: 'about', params: {id: 2}}">About</router-link>
             </li>
         </ul>
     </nav>
