@@ -31,6 +31,7 @@
     "rollup-plugin-node-resolve": "^5.1.0",
     "rollup-plugin-terser": "^5.0.0",
     "serve": "^11.0.2",
+    "sw-precache-webpack-plugin": "^1.0.0",
     "vue-template-compiler": "^2.6.11",
     "workbox-webpack-plugin": "^5.0.0"
   },

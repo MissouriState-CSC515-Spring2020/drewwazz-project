@@ -1,3 +1,10 @@
+module.exports = {
+  staticFileGlobs: [
+    'index.html',
+    'manifest.json',
+    'dist/**.js'
+  ]
+}
 /*
 importScripts('/cache-polyfill.js');
 
