@@ -1,125 +1,98 @@
-// App.vue
-
 <template>
   <div id="app">
-    <nav>
-      <ul>
-        <li>
-          <router-link :to="{name: 'home'}">Home</router-link>
-        </li>
-        <li>
-          <router-link :to="{name: 'fender'}">Fender</router-link>
-        </li>
-        <li>
-          <router-link :to="{name: 'gibson'}">Gibson</router-link>
-        </li>
-        <li>
-          <router-link :to="{name: 'about', params: {id: 2}}">About</router-link>
-        </li>
-        <li>
-          <router-link :to="{name: 'contact'}">Contact</router-link>
-        </li>
-      </ul>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-item nav-link" href="#">About</a>
+          <a class="nav-item nav-link" href="#">Contact</a>
+        </div>
+      </div>
     </nav>
-    <router-view />
+    <Header/>
+    <SearchForm v-on:search="search"/>
+    <SearchResults
+      v-if="videos.length > 0"
+      v-bind:videos="videos"
+      v-bind:reformattedSearchString="reformattedSearchString"
+    />
+    <Pagination
+      v-if="videos.length > 0"
+      v-bind:prevPageToken="api.prevPageToken"
+      v-bind:nextPageToken="api.nextPageToken"
+      v-on:prev-page="prevPage"
+      v-on:next-page="nextPage"
+    />
   </div>
 </template>
 
 <script>
-  export default {
-  }
-</script>
+import Header from './components/layout/Header';
+import SearchForm from './components/SearchForm';
+import SearchResults from './components/SearchResults';
+import Pagination from './components/Pagination';
+import axios from 'axios';
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-body {
-  width: 100%;
-  max-width: 960px;
-  margin: 0 auto;
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 300;
-  background-image: url('./components/images/background3.jpg');
-  background-size: cover;
-  text-align: center;
-
-}
-
-.carousel{
-
-  max-width: 400px;
-  max-height:400px;
-  margin: auto;
-}
-
-nav {
-  width: 100%;
-  margin: 20px 0; 
-}
-nav ul {
-  list-style: none;
-  overflow: hidden; }
-  nav ul li {
-    float: left;
-    width: 20%; }
-    nav ul li a {
-      text-align: center;
-      padding: 8px 0;
-      display: block;
-      width: 100%;
-      background: #cdeb8e; /* Old browsers */
-      background: -moz-linear-gradient(top,
-        #cdeb8e 0%, #b0ca34 100%); /* FF3.6+ */
-      background: -webkit-gradient(linear, left top, left bottom,
-        color-stop(0%,#cdeb8e),
-        color-stop(100%,#b0ca34)); /* Chrome,Safari4+ */
-      background: -webkit-linear-gradient(top,
-        #cdeb8e 0%,#b0ca34 100%); /* Chrome10+,Safari5.1+ */
-      background: -o-linear-gradient(top,
-        #cdeb8e 0%,#b0ca34 100%); /* Opera 11.10+ */
-      background: linear-gradient(to bottom,
-        #cdeb8e 0%,#b0ca34 100%); /* W3C, IE10+ */
-      filter: progid:DXImageTransform.Microsoft.gradient(
-        startColorstr=’#cdeb8e’,
-        endColorstr=’#b0ca34′,GradientType=0 ); /* IE6-9 */
-    }
-    nav ul li a,
-    nav ul li a:focus,
-    nav ul li a:visited,
-    nav ul li a:hover,
-    nav ul li a:active {
-      color: #000;
-      text-decoration: none; }
-      nav ul li a:hover,
-      nav ul li a:active {
-        background: #b0ca34; /* Old browsers */
-        background: -moz-linear-gradient(top,
-          #b0ca34 0%, #96c40d 100%); /* FF3.6+ */
-        background: -webkit-gradient(linear, left top, left bottom,
-          color-stop(0%,#b0ca34),
-          color-stop(100%,#96c40d)); /* Chrome,Safari4+ */
-        background: -webkit-linear-gradient(top,
-          #b0ca34 0%,#96c40d 100%); /* Chrome10+,Safari5.1+ */
-        background: -o-linear-gradient(top,
-          #b0ca34 0%,#96c40d 100%); /* Opera 11.10+ */
-        background: linear-gradient(to bottom,
-          #b0ca34 0%,#96c40d 100%); /* W3C, IE10+ */
-        filter: progid:DXImageTransform.Microsoft.gradient(
-          startColorstr=’#b0ca34′,
-          endColorstr=’#96c40d’,GradientType=0 ); /* IE6-9 */
+export default {
+  name: 'app',
+  components: {
+    Header,
+    SearchForm,
+    SearchResults,
+    Pagination
+  },
+  data() {
+    return {
+      videos: [],
+      reformattedSearchString: '',
+      api: {
+        baseUrl: 'https://www.googleapis.com/youtube/v3/search?',
+        part: 'snippet',
+        type: 'video',
+        order: 'viewCount',
+        maxResults: 12,
+        q: '',
+        key: 'AIzaSyDD-USFjs9JsnFUWa6YU6pPv82gmZ3UO_M',
+        prevPageToken: '',
+        nextPageToken: ''
       }
-      nav ul li:first-child a {
-        border-top-left-radius: 8px;
-        border-bottom-left-radius: 8px; }
-        nav ul li:last-child a {
-          border-top-right-radius: 8px;
-          border-bottom-right-radius: 8px; }
+    };
+  },
+  methods: {
+    search(searchParams) {
+      this.reformattedSearchString = searchParams.join(' ');
+      this.api.q = searchParams.join('+');
+      const { baseUrl, part, type, order, maxResults, q, key } = this.api;
+      const apiUrl = `${baseUrl}part=${part}&type=${type}&order=${order}&q=${q}&maxResults=${maxResults}&key=${key}`;
+      this.getData(apiUrl);
+    },
 
-          @import'~bootstrap/dist/css/bootstrap.css'
-        </style>
+    prevPage() {
+      const { baseUrl, part, type, order, maxResults, q, key, prevPageToken } = this.api;
+      const apiUrl = `${baseUrl}part=${part}&type=${type}&order=${order}&q=${q}&maxResults=${maxResults}&key=${key}&pageToken=${prevPageToken}`;
+      this.getData(apiUrl);
+    },
+
+    nextPage() {
+      const { baseUrl, part, type, order, maxResults, q, key, nextPageToken } = this.api;
+      const apiUrl = `${baseUrl}part=${part}&type=${type}&order=${order}&q=${q}&maxResults=${maxResults}&key=${key}&pageToken=${nextPageToken}`;
+      this.getData(apiUrl);
+    },
+
+    getData(apiUrl) {
+      axios
+        .get(apiUrl)
+        .then(res => {
+          this.videos = res.data.items;
+          this.api.prevPageToken = res.data.prevPageToken;
+          this.api.nextPageToken = res.data.nextPageToken;
+        })
+        .catch(error => console.log(error));
+    }
+  }
+};
+</script>
