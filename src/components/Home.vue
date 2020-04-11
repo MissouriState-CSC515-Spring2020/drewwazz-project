@@ -2,7 +2,7 @@
 	<!-- Start of page -->
 	<div>
 		<div>
-			<h1>Home</h1>
+			<h1>Welcome to my Youtube search app. Click on the Youtube Search button to find a video!</h1>
 		</div>
 	</div>
 </template>

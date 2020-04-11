@@ -7,9 +7,11 @@ import About from './components/About.vue';
 import Redirect from './components/Redirect.vue';
 import Error from './components/404.vue';
 import Contact from './components/Contact.vue';
+import YoutubePage from './components/YoutubePage.vue';
 
 const routes = [
     { path: '/', component: Home, name: 'home' },
+    { path: '/YoutubePage', component: YoutubePage, name: 'YoutubePage' },
     { path: '/fender', component: Fender, name: 'fender' },
     { path: '/gibson', component: Gibson, name: 'gibson' },
     { path: '/about/:id', component: About, name: 'about' },
