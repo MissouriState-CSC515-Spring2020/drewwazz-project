@@ -8,6 +8,6 @@ npm install
 
 ### Compiles for development
 ```
-npm run Start
+npm start
 ```
 
